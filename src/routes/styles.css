@@ -2,3 +2,9 @@
 :root {
     background: #0f0e17;
 }
+
+@keyframes cursor {
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+ }
+

@@ -1,24 +1,14 @@
 <script lang="ts">
-let Name = "Hello, I am Abhi";
-let typedChars = ""; 
-let index  = 0;
-let typewriter:ReturnType<typeof setInterval>;
-const typedChar = () => {
-    if(index < Name.length){
-        typedChars += Name[index];
-        index++
-    }else {
-        
-        clearInterval(typewriter);
-    }
+import typing from "../components/typewriter"
+import {onMount} from 'svelte';
+import Intro from "../components/introduction.svelte";
+let Name:string = "Hello, I am Abhi";
+let Hello:Element;
+onMount(() => {
+    typing( Name, x => Hello.textContent = x)
+});
 
-   }
- const typing = () => {
-    typewriter = setInterval(typedChar, 100);
-        
-    }
 
-typing()
 </script>
 
 <svelte:head>
@@ -28,28 +18,20 @@ typing()
 
 <section>
     <body>
-        <div class="Hello">{typedChars}</div>
+        <Intro />
     </body>
 </section>
 
 
 
 <style>
- .Hello {
-        color: #fff;
-        font-family: Nova Mono, monospace;
-        font-size: 5vw;
-        border-right: 0.3rem solid rgba(255,255,255,.75);
-        /* make width as wide as text */
-        width: -moz-fit-content;
-        width: fit-content;
-        display: table;
-        /* animation of cursor */
-        animation: cursor 500ms steps(13) infinite normal;
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        display: -ms-grid;
+        background-color: red;
     }
 
- @keyframes cursor {
-    from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
- }
 </style>
