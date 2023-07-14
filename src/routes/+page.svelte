@@ -1,14 +1,5 @@
 <script lang="ts">
-import typing from "../components/typewriter"
-import {onMount} from 'svelte';
-import Intro from "../components/introduction.svelte";
-let Name:string = "Hello, I am Abhi";
-let Hello:Element;
-onMount(() => {
-    typing( Name, x => Hello.textContent = x)
-});
-
-
+import Intro from "$components/introduction.svelte";
 </script>
 
 <svelte:head>
@@ -29,9 +20,7 @@ onMount(() => {
         margin: 0;
         width: 100%;
         height: 100vh;
-        display: grid;
-        display: -ms-grid;
-        background-color: red;
+        position: relative;
     }
 
 </style>
