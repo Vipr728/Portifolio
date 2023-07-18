@@ -4,7 +4,8 @@
 }
 
 @keyframes cursor {
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
+  0%{border-right-color: transparent;}
+  50%{border-right-color: white;}
+  100%{border-right-color: transparent;}
  }
 
