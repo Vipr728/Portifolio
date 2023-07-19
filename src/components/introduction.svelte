@@ -7,11 +7,16 @@
 	let Hello: Element;
 	let Hobbies: Element;
 	let Phrase: Element;
-	onMount(async () => {
-		await typing.typing(Name, (x) => (Hello.textContent = x), 100);
-		await typing.typing(phrase, (z) => (Phrase.textContent = z), 150);
-		await typing.multiTyping(Text, (y) => (Hobbies.textContent = y), 100);
-	});
+    onMount(async () => {
+        await typing.typing(Name, (x) => (Hello.textContent = x), 100)
+            .then(async () => {
+                await typing.sleep(1600);
+                return typing.typing(phrase, (z) => (Phrase.textContent = z), 150);
+            })
+            .then(async () => {
+                await typing.multiTyping(Text, (y) => (Hobbies.textContent = y), 100);
+            });
+    });
 </script>
 
 <div class="Intro">
@@ -40,8 +45,7 @@
 		width: fit-content;
 		white-space: nowrap;
 		/* animation of cursor */
-		animation-delay: 2s;
-        animation: cursor 1015ms steps(1) infinite normal;
+        animation: cursor 1s step-start 530ms 2 normal forwards;
 		grid-row-start: 2;
 		grid-row-end: 3;
 		grid-column-start: 2;
@@ -62,7 +66,8 @@
 		grid-column-start: 2;
 		grid-column-end: 2;
 		/*fadeIn animation*/
-		animation: fadeIn 2s;
+        animation-delay: 2s;
+		animation: fadeIn 3s;
 	}
 	.Hobbies {
 		color: #fff;
@@ -75,8 +80,8 @@
 		width: fit-content;
 		white-space: nowrap !important;
 		/* animation of cursor */
-		border-right: 0.25rem solid rgba(255, 255, 255, 0.75);
-		animation-delay: 2s;
+		border-right: 0.1rem solid rgba(255, 255, 255, 0.75);
+		animation-delay: 10s;
         animation: cursor 1015ms steps(1) infinite normal;
 		/*grid*/
 		grid-row-start: 3;

@@ -4,8 +4,8 @@
 }
 
 @keyframes cursor {
-  0%{border-right-color: transparent;}
-  50%{border-right-color: white;}
+  0%{border-right-color: white;}
+  50%{border-right-color: transparent;}
+  99.999%{border-right-color: white;}
   100%{border-right-color: transparent;}
  }
-

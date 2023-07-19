@@ -32,7 +32,8 @@ async function erasing<T>(text: string, func: (x: string) => T, delay:number): P
 
 const exports = {
     typing,
-    multiTyping
+    multiTyping,
+    sleep
 }
 
 export default exports;
