@@ -1,9 +1,12 @@
 <script lang="ts">
 	import typing from '$lib/typewriter';
+	// no taxation without representation
+	// ^ js sounded cool rlly means nthn though
+	//dont worry about that function being oppressed, it's just a typing animation 
 	import { onMount } from 'svelte';
 	let Name: string = 'Hello, I am Abhi';
 	let phrase: string = 'I like to';
-	let Text: string[] = ['Code', 'Cube', 'Create', 'Design'];
+	let Text: string[] = ['Code', 'Run', 'Swim', 'Learn'	 ];
 	let Hello: Element;
 	let Hobbies: Element;
 	let Phrase: Element;
@@ -21,13 +24,16 @@
 
 <div class="Intro">
 	<div class="Hello" bind:this={Hello} />
-	<img src="/pfp.png" alt="Me" />
+	<img src="/pfp.png" alt="Me" class = "pfp"/>
 	<div class="About">
 		<div class="phrase" bind:this={Phrase} />
 		<div class="Hobbies" bind:this={Hobbies} />
 	</div>
+    <div class="scrollsign"></div>  
 </div>
 
+
+<!-- I am a perfectionist, so don't ask why everythings so perfect(jk) -->
 <style>
 	.About .phrase,
 	.About .Hobbies {
@@ -68,6 +74,7 @@
 		/*fadeIn animation*/
         animation-delay: 2s;
 		animation: fadeIn 3s;
+		margin-bottom: 25%;
 	}
 	.Hobbies {
 		color: #fff;
@@ -90,39 +97,19 @@
 		grid-column-end: 3;
 	}
 
+
+	
 	.Intro {
-		max-width: 50%;
-		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		position: absolute;
-		top: 50%;
-		right: 50%;
-		transform: translate(50%, -50%);
-		justify-items: center;
-		white-space: nowrap;
-	}
-
-	img {
-		max-width: 25%;
-		grid-row: 1/ 1;
-		grid-column: 3/ 2;
-		animation: fadeIn 2s;
-		clip-path: circle(50% at 50% 50%);
-	}
-
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-			max-width: 0%;
-		}
-		85% {
-			opacity: 0;
-			max-width: 0%;
-		}
-		100% {
-			opacity: 1;
-			max-width: 25%;
-		}
+		scroll-snap-align: start;
+  		max-width: 50%;
+	    display: grid;
+ 	    grid-template-columns: auto;
+   		grid-template-rows: auto auto auto; /* one row for each grid item */
+    	justify-items: center;
+    	white-space: nowrap;
+    	min-height: 100vh;
+		gap: 5px;
+		align-items: start;
+		position: relative;
 	}
 </style>

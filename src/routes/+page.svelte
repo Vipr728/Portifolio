@@ -1,5 +1,7 @@
 <script lang="ts">
 import Intro from "$components/introduction.svelte";
+import AboutMe from "$components/aboutMe.svelte";
+import Skillset from "$components/skillset.svelte";
 </script>
 
 <svelte:head>
@@ -9,18 +11,26 @@ import Intro from "$components/introduction.svelte";
 
 <section>
     <body>
-        <Intro />
+        <Intro  />
+        <AboutMe />
+        <Skillset />
     </body>
 </section>
 
 
 
 <style>
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100vh;
-        position: relative;
-    }
-
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+    
 </style>

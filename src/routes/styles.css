@@ -9,3 +9,73 @@
   99.999%{border-right-color: white;}
   100%{border-right-color: transparent;}
  }
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		max-width: 0%;
+	}
+	85% {
+		opacity: 0;
+		max-width: 0%;
+	}
+	100% {
+		opacity: 1;
+		max-width: 25%;
+	}
+}
+	.pfp {
+    margin-top: 30%;
+		max-width: 25%;
+		grid-row: 1/ 1;
+		grid-column: 3/ 2;
+		animation: fadeIn 2s;
+		clip-path: circle(50% at 50% 50%);
+	}
+
+
+@media (min-width: 600px) {
+    .Intro {
+        gap: 10px; /* larger gap for larger screens */
+    }
+}
+
+@media (min-width: 900px) {
+    .Intro {
+        gap: 20px; /* even larger gap for even larger screens */
+    }
+}
+
+    .scrollsign {
+        position: absolute;
+	    left: 50%;
+	    bottom: 10px;
+	    display: block;
+	    text-align: center;
+	    font-size: 20px;
+	    z-index: 100;
+	    text-decoration: none;
+	    text-shadow: 0;
+        width: 13px;
+        height: 13px;
+        border-bottom: 10px solid #fff;
+        border-right: 10px solid #fff;
+        z-index: 10;
+        left: 50%;
+        border-radius:10%;
+        transform: rotate(45deg);
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-name: SCROLLSIGN;
+        animation-timing-function: ease;
+    }
+    @keyframes SCROLLSIGN {
+        0%   { transform: scale(1,1)      translateY(0) rotate(45deg); }
+        10%  { transform: scale(1.1,.9)   translateY(0) rotate(45deg);}
+        30%  { transform: scale(.9,1.1)   translateY(-100px) rotate(45deg); }
+        50%  { transform: scale(1.05,.95) translateY(0) rotate(45deg); }
+        57%  { transform: scale(1,1)      translateY(-7px) rotate(45deg); }
+        64%  { transform: scale(1,1)      translateY(0) rotate(45deg); }
+        100% { transform: scale(1,1)      translateY(0) rotate(45deg); }
+    }
+
